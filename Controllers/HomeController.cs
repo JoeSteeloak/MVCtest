@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Mvc.Models
 
-namespace MyApp.Namespace
+namespace Mvc.Controllers
 {
     public class HomeController : Controller
     {
@@ -10,12 +12,16 @@ namespace MyApp.Namespace
             return View();
         }
 
+        [Route("/meny")]
         public IActionResult Menu()
         {
+            var jsonStr = System.IO.File.ReadAllText("menu.json");
+            var JsonObj = JsonConvert.DeserializeObject<IEnumerable<Menu>>(jsonStr);
             return View();
         }
 
-                public IActionResult About()
+        [Route("/omoss")]
+        public IActionResult About()
         {
             return View();
         }

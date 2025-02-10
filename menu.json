@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "name": "Margherita",
+        "ingredients": "Tomatsås, Ost",
+        "price": "80"
+    },
+    {
+        "id": 2,
+        "name": "Capricciosa",
+        "ingredients": "Tomatsås, Ost, Skinka, Champinjoner",
+        "price": "95"
+    },
+    {
+        "id": 3,
+        "name": "Diavola",
+        "ingredients": "Tomatsås, Ost, Salami, Pepparoni",
+        "price": "100"
+    },
+    {
+        "id": 4,
+        "name": "Quattro Stagioni",
+        "ingredients": "Tomatsås, Ost, Skinka, Svamp, Oliver, Artiskocka",
+        "price": "110"
+    },
+    {
+        "id": 5,
+        "name": "Vegetariana",
+        "ingredients": "Tomatsås, Ost, Paprika, Zucchini, Lök, Oliv",
+        "price": "95"
+    },
+    {
+        "id": 6,
+        "name": "Hawaiian",
+        "ingredients": "Tomatsås, Ost, Skinka, Ananas",
+        "price": "105"
+    },
+    {
+        "id": 7,
+        "name": "4 Cheese",
+        "ingredients": "Tomatsås, Ost, Mozzarella, Gorgonzola, Parmesan, Taleggio",
+        "price": "120"
+    },
+    {
+        "id": 8,
+        "name": "BBQ Chicken",
+        "ingredients": "BBQ-sås, Ost, Kyckling, Lök, Paprika",
+        "price": "115"
+    },
+    {
+        "id": 9,
+        "name": "Prosciutto e Rucola",
+        "ingredients": "Tomatsås, Ost, Prosciutto, Rucola, Parmesan",
+        "price": "125"
+    },
+    {
+        "id": 10,
+        "name": "Salami Piccante",
+        "ingredients": "Tomatsås, Ost, Salami, Jalapeños",
+        "price": "110"
+    },
+    {
+        "id": 11,
+        "name": "Marinara",
+        "ingredients": "Tomatsås, Vitlök, Oregano, Oliver",
+        "price": "75"
+    },
+    {
+        "id": 12,
+        "name": "Frutti di Mare",
+        "ingredients": "Tomatsås, Ost, Bläckfisk, Räkor, Musslor",
+        "price": "130"
+    },
+    {
+        "id": 13,
+        "name": "Calzone",
+        "ingredients": "Tomatsås, Ost, Skinka, Champinjoner, Ricotta",
+        "price": "120"
+    },
+    {
+        "id": 14,
+        "name": "Carbonara",
+        "ingredients": "Crème fraiche, Ost, Bacon, Ägg, Svartpeppar",
+        "price": "125"
+    },
+    {
+        "id": 15,
+        "name": "Siciliana",
+        "ingredients": "Tomatsås, Ost, Aubergine, Oliv, Kapris",
+        "price": "100"
+    },
+    {
+        "id": 16,
+        "name": "Margarita Bianca",
+        "ingredients": "Ost, Ricotta, Mozzarella, Parmesan",
+        "price": "105"
+    },
+    {
+        "id": 17,
+        "name": "Pugliese",
+        "ingredients": "Tomatsås, Ost, Lammfärs, Lök, Paprika",
+        "price": "120"
+    },
+    {
+        "id": 18,
+        "name": "Zingara",
+        "ingredients": "Tomatsås, Ost, Salami, Färska tomater, Basilika",
+        "price": "115"
+    },
+    {
+        "id": 19,
+        "name": "Napoletana",
+        "ingredients": "Tomatsås, Ost, Sardiner, Kapris, Lök",
+        "price": "100"
+    },
+    {
+        "id": 20,
+        "name": "Pesto e Pomodorini",
+        "ingredients": "Pestosås, Ost, Körsbärstomater, Rucola, Parmesan",
+        "price": "110"
+    }
+]

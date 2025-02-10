@@ -19,11 +19,11 @@
 <body>
     <header id="header">
         <nav>
-            <a href="index.html"><img src="~/images/pizza-logo.svg" alt="logo" id="logo"></a>
+            <a asp-controller="Home" asp-action="Index"><img src="~/images/pizza-logo.svg" alt="logo" id="logo"></a>
             <ul>
-                <li><a href="#banner">Start</a></li>
-                <li><a href="#menuTitle">Meny</a></li>
-                <li><a href="#aboutTitle">Om oss</a></li>
+                <li><a asp-controller="Home" asp-action="Index">Start</a></li>
+                <li><a asp-controller="Home" asp-action="Menu">Meny</a></li>
+                <li><a asp-controller="Home" asp-action="About">Om oss</a></li>
                 <li><a href="login.html"><i class="fa-solid fa-lock"></i></a></li>
                 <li class="hidden"><a href="admin.html">hemlig</a></li>
             </ul>
