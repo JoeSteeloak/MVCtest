@@ -8,7 +8,7 @@ async function init() {
     displayMenu(data);
 };
 
-//skriv ut menyn
+/* //skriv ut menyn
 function displayMenu(data) {
     const menuEl = document.getElementById("menu");
     data.forEach(e => {
@@ -19,7 +19,7 @@ function displayMenu(data) {
         <p class="price">${e.price} kr</p> 
         </div>`
     });
-}
+} */
 
 //visa och dölj bokningsfönstret
 

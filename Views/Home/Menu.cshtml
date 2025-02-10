@@ -1,3 +1,4 @@
+@model IEnumerable<Mvc.Models.Menu>
 @{
     ViewData["Title"] = "Meny";
 }
@@ -5,4 +6,12 @@
 <!-- menyn -->
 <h2 id="menuTitle">Pizzameny</h2>
 <div id="menu" class="flex-container">
+    @foreach(var item in Model) {
+        <div class="menuItem">
+        <h4 class="foodname">@item.name</h4>
+        <p class="ingredients">@item.ingredients</p>
+        <p class="price">@item.price kr</p> 
+        </div>
+    }
 </div>
+

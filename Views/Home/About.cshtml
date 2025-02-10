@@ -1,30 +1,57 @@
+@model Mvc.Models.ContactFormModel
 @{
     ViewData["Title"] = "Om oss";
 }
 
-        <!-- Pizzerians histora -->
-        <h2 id="aboutTitle">Vår historia</h2>
-        <div id="about">
-            <div><img src="~/images/hot-pizza.jpg" alt=""></div>
-            <div>
-                <p> Välkommen till vår anrika pizzeria mitt i hjärtat av Malmö! Sedan vår öppning år 1988 har vi stolt
-                    serverat våra kunder med kärlek och passion för äkta italiensk mat. Vår historia sträcker sig över
-                    flera
-                    decennier och har blivit en integrerad del av Malmös kulturella och gastronomiska arv. Med en
-                    harmonisk
-                    blandning av traditionella recept och moderna influenser strävar vi alltid efter att leverera en
-                    smakupplevelse utöver det vanliga. Vi ser fram emot att få välkomna dig till vår pizzeria och dela
-                    vår
-                    passion för god mat och gemenskap. Välkommen till en smakresa genom tiden! <br><br>
-                    <span class="extra">buon appetito!</span>
-                </p>
-            </div>
+<!-- Pizzerians histora -->
+<h2 id="aboutTitle">Vår historia</h2>
+<div id="about">
+    <div><img src="~/images/hot-pizza.jpg" alt=""></div>
+    <div>
+        <p> Välkommen till vår anrika pizzeria mitt i hjärtat av Malmö! Sedan vår öppning år 1988 har vi stolt
+            serverat våra kunder med kärlek och passion för äkta italiensk mat. Vår historia sträcker sig över
+            flera
+            decennier och har blivit en integrerad del av Malmös kulturella och gastronomiska arv. Med en
+            harmonisk
+            blandning av traditionella recept och moderna influenser strävar vi alltid efter att leverera en
+            smakupplevelse utöver det vanliga. Vi ser fram emot att få välkomna dig till vår pizzeria och dela
+            vår
+            passion för god mat och gemenskap. Välkommen till en smakresa genom tiden! <br><br>
+            <span class="extra">buon appetito!</span>
+        </p>
+    </div>
+</div>
+<!-- google map för att hitta till pizzerian -->
+<h2 id="aboutLocation">Hitta hit</h2>
+<div id="map">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2254.679783535239!2d12.994633077881586!3d55.590181973024634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTXCsDM1JzI0LjciTiAxMsKwNTknNTAuMCJF!5e0!3m2!1ssv!2sse!4v1715859717903!5m2!1ssv!2sse"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<h2>Kontakta oss</h2>
+<div id="contactForm">
+    <form method="post" id="form" class="topBefore">
+        <div>
+            <label for="Name">Namn</label>
+            <input id="Name" name="Name" type="text" value="@Model.Name" />
         </div>
-        <!-- google map för att hitta till pizzerian -->
-        <h2 id="aboutLocation">Hitta hit</h2>
-        <div id="map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2254.679783535239!2d12.994633077881586!3d55.590181973024634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTXCsDM1JzI0LjciTiAxMsKwNTknNTAuMCJF!5e0!3m2!1ssv!2sse!4v1715859717903!5m2!1ssv!2sse"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div>
+            <label for="Email">E-post</label>
+            <input id="Email" name="Email" type="email" value="@Model.Email" />
         </div>
+        <div>
+            <label for="Message">Meddelande</label>
+            <textarea id="Message" name="Message">@Model.Message</textarea>
+        </div>
+        <div>
+            <button type="submit">Skicka</button>
+        </div>
+    </form>
+</div>>
+@if (ViewData["Message"] != null)
+{
+    <div class="confirmationMessage">
+        <p>@ViewData["Message"]</p>
+    </div>
+}

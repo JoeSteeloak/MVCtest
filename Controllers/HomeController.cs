@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using Mvc.Models
+using Mvc.Models;
 
 namespace Mvc.Controllers
 {
@@ -17,13 +17,27 @@ namespace Mvc.Controllers
         {
             var jsonStr = System.IO.File.ReadAllText("menu.json");
             var JsonObj = JsonConvert.DeserializeObject<IEnumerable<Menu>>(jsonStr);
-            return View();
+            return View(JsonObj);
         }
 
         [Route("/omoss")]
         public IActionResult About()
         {
-            return View();
+            var model = new ContactFormModel();  // Skapa en instans av modellen
+    return View(model);  // Skicka modellen till vyn
+        }
+
+        // POST: Home/Contact
+        [HttpPost]
+        [Route("/omoss")]
+        public IActionResult About(ContactFormModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                ViewData["Message"] = "Ditt meddelande har skickats!";
+                return View();
+            }
+            return View(model);
         }
 
     }
