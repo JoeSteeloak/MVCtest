@@ -1,0 +1,212 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  max-width: 100%;
+}
+header nav {
+  width: 100vw;
+}
+header nav img {
+  position: fixed;
+  top: 10px;
+  left: 50px;
+  width: 220px;
+}
+header nav img:hover {
+  transform: scale(1.1);
+}
+header ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: right;
+}
+header li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 50px;
+}
+header li a {
+  text-decoration: none;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header li a:hover {
+  color: #cccccc;
+}
+header .hidden {
+  display: none;
+}
+
+#banner {
+  background: url("../images/background-header.jpg") no-repeat center center fixed;
+  height: 900px;
+  background-size: cover;
+}
+#banner h1 {
+  margin: 0;
+  text-align: center;
+  padding-top: 450px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  text-shadow: black 1px 1px 1px;
+}
+#banner a {
+  display: block;
+  width: 200px;
+  margin: 50px auto;
+  padding: 10px 5px;
+  border: #E02B20 solid 1px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #E02B20;
+  text-decoration: none;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 0.1em;
+  box-shadow: black 1px 1px 1px;
+}
+#banner a:hover {
+  background-color: rgb(135.2047244094, 25.4645669291, 18.7952755906);
+  border: rgb(135.2047244094, 25.4645669291, 18.7952755906);
+}
+
+h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3em;
+  letter-spacing: 0.1em;
+  padding-top: 80px;
+  text-wrap: wrap;
+  max-width: 100%;
+}
+
+#menu {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#menu .foodname {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+#menu .ingredients {
+  color: #888888;
+}
+#menu .price {
+  color: #5cb83a;
+  font-weight: 700;
+}
+#menu .menuItem {
+  padding: 50px;
+  width: 200px;
+}
+#menu .menuItem:hover {
+  transform: scale(1.1);
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+#about img {
+  width: 500px;
+  max-width: 90%;
+  margin: 0 auto;
+  display: block;
+}
+#about p {
+  max-width: 500px;
+  width: 80%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  letter-spacing: 0.05em;
+  line-height: 1.5em;
+  margin: 0 auto;
+  padding-top: 15px;
+  color: #888;
+}
+#about .extra {
+  color: #E02B20;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+footer {
+  background-color: #efece4;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #3e3e3e;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  display: flex;
+}
+footer p {
+  margin-bottom: 0;
+}
+footer div {
+  flex-grow: 1;
+  padding: 10px;
+}
+footer h4 {
+  color: #E02B20;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+footer i:hover {
+  cursor: pointer;
+  color: #5cb83a;
+}
+footer #openingHours {
+  margin-left: 10px;
+  line-height: 1.5em;
+}
+footer #adress {
+  line-height: 1.5em;
+}
+
+#map {
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  #logo {
+    display: none;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  #contactFormLocation,
+  #contactForm {
+    display: none;
+  }
+  #menu .menuItem {
+    padding: 5px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Formaggio | @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/normalize.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/contact.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/booking.css" asp-append-version="true">
+    <script type="module" src="~/js/main.js"></script>
+    <script type="module" src="~/js/booking.js"></script>
+    <script type="module" src="~/js/contact.js"></script>
+    <script src="https://kit.fontawesome.com/49496d55e2.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="~/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header id="header">
+        <nav>
+            <a href="index.html"><img src="~/images/pizza-logo.svg" alt="logo" id="logo"></a>
+            <ul>
+                <li><a href="#banner">Start</a></li>
+                <li><a href="#menuTitle">Meny</a></li>
+                <li><a href="#aboutTitle">Om oss</a></li>
+                <li><a href="login.html"><i class="fa-solid fa-lock"></i></a></li>
+                <li class="hidden"><a href="admin.html">hemlig</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <div id="openingHours">
+            <h4>öppettider</h4>
+            <p><strong>Mån:</strong> Stängd <br>
+                <strong>Tis - Fre:</strong> 16:00 - 22:00 <br>
+                <strong>Lör - Sön:</strong> 11:00 - 22:00 <br>
+                <strong>Alla röda dagar:</strong> 11:00 - 22:00
+            </p>
+        </div>
+        <div id="adress">
+            <h4>adress</h4>
+            <p>Östra Rönneholmsvägen 20, <br>
+                211 47 Malmö</p>
+        </div>
+        <div>
+            <h4>kontakta oss</h4>
+            <p><i class="fa-solid fa-phone"></i> 0737-465 87 46</p>
+            <p><i class="fa-brands fa-square-facebook"></i></p>
+            <p><i class="fa-brands fa-x-twitter"></i></p>
+            <p><i class="fa-brands fa-instagram"></i></p>
+            <p>&copy; Jonas Ståleker</p>
+        </div>
+    </footer>
+</body>
+
+</html>

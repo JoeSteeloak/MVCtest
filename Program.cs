@@ -12,6 +12,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=index}/{id?}"
 );
 
-app.MapGet("/", () => "Hello World!");
+
 
 app.Run();
