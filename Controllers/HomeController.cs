@@ -27,18 +27,41 @@ namespace Mvc.Controllers
     return View(model);  // Skicka modellen till vyn
         }
 
-        // POST: Home/Contact
-        [HttpPost]
-        [Route("/omoss")]
-        public IActionResult About(ContactFormModel model)
+[HttpPost]
+[Route("/omoss")]
+public IActionResult About(ContactFormModel model)
+{
+    if (ModelState.IsValid)
+    {
+        // Filens sökväg
+        string filePath = "contactMessages.json";
+
+        // Läs in befintliga meddelanden
+        List<ContactFormModel> messages = new();
+        if (System.IO.File.Exists(filePath))
         {
-            if (ModelState.IsValid)
+            string existingJson = System.IO.File.ReadAllText(filePath);
+            if (!string.IsNullOrWhiteSpace(existingJson))
             {
-                ViewData["Message"] = "Ditt meddelande har skickats!";
-                return View();
+                messages = JsonConvert.DeserializeObject<List<ContactFormModel>>(existingJson) ?? new List<ContactFormModel>();
             }
-            return View(model);
         }
+
+        // Lägg till det nya meddelandet
+        messages.Add(model);
+
+        // Skriv tillbaka till filen
+        string updatedJson = JsonConvert.SerializeObject(messages, Formatting.Indented);
+        System.IO.File.WriteAllText(filePath, updatedJson);
+
+        // Visa bekräftelsemeddelande
+        ViewData["Message"] = "Ditt meddelande har sparats!";
+        return View(new ContactFormModel());  // Återställ formuläret
+    }
+
+    return View(model);
+}
+
 
     }
 }
