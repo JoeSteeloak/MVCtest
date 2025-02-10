@@ -1,0 +1,24 @@
+@model Mvc.Models.ContactFormModel
+
+<div id="contactForm">
+    <form method="post" id="form" class="topBefore">
+        <div>
+            <label for="Name">Namn</label>
+            <input id="Name" name="Name" type="text" value="@Model.Name" />
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            <label for="Email">E-post</label>
+            <input id="Email" name="Email" type="email" value="@Model.Email" />
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            <label for="Message">Meddelande</label>
+            <textarea id="Message" name="Message">@Model.Message</textarea>
+            @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            <button type="submit" formaction="/omoss/skicka">Skicka</button>
+        </div>
+    </form>
+</div>
