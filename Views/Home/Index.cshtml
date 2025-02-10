@@ -12,6 +12,31 @@
 <h2>@ViewBag.Greeting</h2>
 <h3 style="text-align: center">@ViewData["OpeningHours"]</h3>
 
+<div class="pizza-container">
+    <div class="pizza-box">
+        <h2>Välj din favoritpizza! 🍕</h2>
+
+        <p><strong>Din favoritpizza:</strong> @ViewData["FavoritePizza"]</p>
+
+        <form method="post" action="@Url.Action("SetFavoritePizza", "Home")">
+            <label for="pizza">Välj din favorit:</label>
+            <select name="pizza" id="pizza">
+                <option value="Margherita">Margherita</option>
+                <option value="Capricciosa">Capricciosa</option>
+                <option value="Vesuvio">Vesuvio</option>
+                <option value="Quattro Stagioni">Quattro Stagioni</option>
+            </select>
+            <button type="submit">Spara favorit</button>
+        </form>
+
+        <br>
+
+        <a href="@Url.Action("ClearFavoritePizza", "Home")">Glöm favoritpizza</a>
+    </div>
+</div>
+
+
+
 <!-- google map för att hitta till pizzerian -->
 <h2 id="aboutLocation">Hitta hit</h2>
 <div id="map">

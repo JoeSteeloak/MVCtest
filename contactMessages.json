@@ -150,5 +150,21 @@
     "Subject": "Fråga",
     "ContactMethod": "Email",
     "AcceptTerms": true
+  },
+  {
+    "Name": "jonas",
+    "Email": "jonasstaleker@gmail.com",
+    "Message": "test1test1",
+    "Subject": "Support",
+    "ContactMethod": "Email",
+    "AcceptTerms": true
+  },
+  {
+    "Name": "Jonas",
+    "Email": "jonasstaleker@gmail.com",
+    "Message": "testtest",
+    "Subject": "Support",
+    "ContactMethod": "Email",
+    "AcceptTerms": true
   }
 ]

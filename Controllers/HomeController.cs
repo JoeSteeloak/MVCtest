@@ -12,8 +12,24 @@ namespace Mvc.Controllers
         {
             ViewBag.Greeting = "Välkommen till vår Pizzeria!";
             ViewData["OpeningHours"] = "Vi har öppet alla dagar 11:00 - 23:00";
+            ViewData["FavoritePizza"] = HttpContext.Session.GetString("FavoritePizza") ?? "Du har inte valt en favoritpizza ännu!";
 
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult SetFavoritePizza(string pizza)
+        {
+            // Spara favoritpizzan i sessionen
+            HttpContext.Session.SetString("FavoritePizza", pizza);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult ClearFavoritePizza()
+        {
+            // Ta bort favoritpizzan från sessionen
+            HttpContext.Session.Remove("FavoritePizza");
+            return RedirectToAction("Index");
         }
 
         [Route("/meny")]
