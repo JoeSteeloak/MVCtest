@@ -1,3 +1,5 @@
+@using Mvc.Models  
+@model ContactFormModel
 @{
     ViewData["Title"] = "Startsida";
 }
@@ -18,6 +20,26 @@
         width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
+<!-- Kontaktformulär/Partial view -->
+<h2>Kontakt</h2>
+
+@await Html.PartialAsync("_ContactForm", Model ?? new ContactFormModel())
+
+@if (ViewData["Message"] != null)
+{
+    <div id="confirmationMessage" class="confirmationMessage">
+        <p style="text-align: center">@ViewData["Message"]</p>
+    </div>
+}
+@if (ViewData["Message"] != null)
+{
+    <div id="confirmationMessage" class="confirmationMessage">
+        <p style="text-align: center">@ViewData["Message"]</p>
+    </div>
+}
+
+
+@Html.ValidationSummary(true) <!-- Visa alla valideringsfel i en sammanfattning -->
 
 <!-- bokningsformulär - pop-up -->
 <p id="booking-btn">BOKA BORD</p>

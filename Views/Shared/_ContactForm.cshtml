@@ -1,7 +1,8 @@
 @model Mvc.Models.ContactFormModel
+<link rel="stylesheet" href="~/css/contactform.css" />
 
 <div id="contactForm">
-    <form method="post" id="form" class="topBefore">
+    <form method="post" id="form" class="topBefore contact-form">
         <div>
             <label for="Name">Namn</label>
             <input id="Name" name="Name" type="text" value="@Model.Name" />
@@ -17,6 +18,31 @@
             <textarea id="Message" name="Message">@Model.Message</textarea>
             @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
         </div>
+        <!-- Dropdown för ämne -->
+    <div>
+        <label for="subject">Ämne:</label>
+        <select asp-for="Subject" class="form-control">
+            <option value="">Välj ett ämne</option>
+            <option value="Support">Support</option>
+            <option value="Fråga">Fråga</option>
+            <option value="Feedback">Feedback</option>
+        </select>
+    </div>
+
+    <!-- Radiobuttons för kontaktmetod -->
+    <div>
+        <label>Hur vill du bli kontaktad?</label>
+        <div>
+            <input type="radio" asp-for="ContactMethod" value="Email" /> E-post
+            <input type="radio" asp-for="ContactMethod" value="Telefon" /> Telefon
+        </div>
+    </div>
+
+    <!-- Checkbox för att godkänna villkor -->
+    <div>
+        <input type="checkbox" asp-for="AcceptTerms" />
+        <label for="AcceptTerms">Jag godkänner villkoren</label>
+    </div>
         <div>
             <button type="submit" formaction="/omoss/skicka">Skicka</button>
         </div>

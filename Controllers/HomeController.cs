@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Mvc.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.IO;
-
 
 namespace Mvc.Controllers
 {
@@ -10,7 +10,6 @@ namespace Mvc.Controllers
     {
         public IActionResult Index()
         {
-            // ViewBag och ViewData för vanliga meddelanden
             ViewBag.Greeting = "Välkommen till vår Pizzeria!";
             ViewData["OpeningHours"] = "Vi har öppet alla dagar 11:00 - 23:00";
 
@@ -28,45 +27,46 @@ namespace Mvc.Controllers
         [Route("/omoss")]
         public IActionResult About()
         {
-            // Hämta sparad data från session om den finns
-            var model = new ContactFormModel(); // Tom modell om inget finns i session
+            var model = new ContactFormModel(); 
             return View(model); 
         }
 
         // Metod för att skicka till JSON
         [HttpPost]
-[Route("/omoss/skicka")]
-public IActionResult SendToJson(ContactFormModel model)
-{
-    if (ModelState.IsValid)
-    {
-        // Läs existerande data från JSON-fil
-        string filePath = "contactMessages.json";
-        List<ContactFormModel> messages = new();
-
-        if (System.IO.File.Exists(filePath))
+        [Route("/omoss/skicka")]
+        public IActionResult SendToJson(ContactFormModel model)
         {
-            string existingJson = System.IO.File.ReadAllText(filePath);
-            if (!string.IsNullOrWhiteSpace(existingJson))
+            if (ModelState.IsValid)
             {
-                messages = JsonConvert.DeserializeObject<List<ContactFormModel>>(existingJson) ?? new List<ContactFormModel>();
+                string filePath = "contactMessages.json";
+                List<ContactFormModel> messages = new();
+
+                if (System.IO.File.Exists(filePath))
+                {
+                    string existingJson = System.IO.File.ReadAllText(filePath);
+                    if (!string.IsNullOrWhiteSpace(existingJson))
+                    {
+                        messages = JsonConvert.DeserializeObject<List<ContactFormModel>>(existingJson) ?? new List<ContactFormModel>();
+                    }
+                }
+
+                // Lägg till det nya meddelandet
+                messages.Add(model);
+
+                // Skriv tillbaka till filen
+                string updatedJson = JsonConvert.SerializeObject(messages, Formatting.Indented);
+                System.IO.File.WriteAllText(filePath, updatedJson);
+
+                // Skicka bekräftelse och rensa formuläret
+                TempData["SuccessMessage"] = "Ditt meddelande har skickats och sparats!";
+                return RedirectToAction("About");
+            }
+            else
+            {
+                // Om modellen inte är giltig, visa felmeddelanden
+                ViewData["Message"] = "Vänligen fyll i alla obligatoriska fält!";
+                return View("About", model);
             }
         }
-
-        // Lägg till det nya meddelandet
-        messages.Add(model);
-
-        // Skriv tillbaka till filen
-        string updatedJson = JsonConvert.SerializeObject(messages, Formatting.Indented);
-        System.IO.File.WriteAllText(filePath, updatedJson);
-
-        // Visa bekräftelsemeddelande
-        ViewData["Message"] = "Ditt meddelande har skickats och sparats!";
-        return View("About", model); // Om det var lyckat, återgå till About
     }
-    else
-    {
-        // Om modellen inte är giltig, visa felmeddelanden
-        ViewData["Message"] = "Vänligen fyll i alla obligatoriska fält!";
-        return View("About", model); // Visa samma vy med felmeddelanden
-    }}}}
+}

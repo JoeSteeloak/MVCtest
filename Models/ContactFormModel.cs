@@ -14,5 +14,11 @@ namespace Mvc.Models
 
         [Required(ErrorMessage = "Meddelande är obligatoriskt.")]
         public string Message { get; set; }
-    }
+
+        public string Subject { get; set; } // Dropdown-val
+
+        public string ContactMethod { get; set; } // Radiobuttons
+
+        public bool AcceptTerms { get; set; } // Checkbox
+}
 }

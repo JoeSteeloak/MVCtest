@@ -2,61 +2,153 @@
   {
     "Name": "Jonas",
     "Email": "jonasstaleker@gmail.com",
-    "Message": "test1"
+    "Message": "test1",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
   },
   {
     "Name": "Jonas",
     "Email": "jonasstaleker@gmail.com",
-    "Message": "test2"
+    "Message": "test2",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
   },
   {
     "Name": "Jonas",
     "Email": "jonasstaleker@gmail.com",
-    "Message": "test3"
+    "Message": "test3",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
   },
   {
     "Name": "Jonas",
     "Email": "jonasstaleker@gmail.com",
-    "Message": "test4"
+    "Message": "test4",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
   },
   {
     "Name": "Jonas",
     "Email": "jonasstaleker@gmail.com",
-    "Message": "test4"
+    "Message": "test4",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
   },
   {
     "Name": "Jonas",
     "Email": "jonasstaleker@gmail.com",
-    "Message": "test4"
+    "Message": "test4",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
   },
   {
     "Name": "Jonas",
     "Email": "jonasstaleker@gmail.com",
-    "Message": "test4"
+    "Message": "test4",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
   },
   {
     "Name": "Jonas",
     "Email": "jonasstaleker@gmail.com",
-    "Message": "test4"
+    "Message": "test4",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
   },
   {
     "Name": "Jonas",
     "Email": "jonasstaleker@gmail.com",
-    "Message": "test5"
+    "Message": "test5",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
   },
   {
     "Name": "Jonas",
     "Email": "jonasstaleker@gmail.com",
-    "Message": "test6"
+    "Message": "test6",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
   },
   {
     "Name": "Jonas",
     "Email": "jonasstaleker@gmail.com",
-    "Message": "test6"
+    "Message": "test6",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
   },
   {
     "Name": "Jonas",
     "Email": "jonasstaleker@gmail.com",
-    "Message": "test6"
+    "Message": "test6",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
+  },
+  {
+    "Name": "Jonas",
+    "Email": "jonasstaleker@gmail.com",
+    "Message": "test10",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
+  },
+  {
+    "Name": "Jonas",
+    "Email": "jonasstaleker@gmail.com",
+    "Message": "test10",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
+  },
+  {
+    "Name": "Jonas",
+    "Email": "jonasstaleker@gmail.com",
+    "Message": "test123231",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
+  },
+  {
+    "Name": "Jonas",
+    "Email": "jonasstaleker@gmail.com",
+    "Message": "test123231",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
+  },
+  {
+    "Name": "Jonas",
+    "Email": "jonasstaleker@gmail.com",
+    "Message": "test123231",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
+  },
+  {
+    "Name": "Jonas",
+    "Email": "jonasstaleker@gmail.com",
+    "Message": "testest",
+    "Subject": null,
+    "ContactMethod": null,
+    "AcceptTerms": false
+  },
+  {
+    "Name": "Jonas",
+    "Email": "jonasstaleker@gmail.com",
+    "Message": "bla",
+    "Subject": "Fråga",
+    "ContactMethod": "Email",
+    "AcceptTerms": true
   }
 ]
