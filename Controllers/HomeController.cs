@@ -1,14 +1,19 @@
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using Mvc.Models;
+using Newtonsoft.Json;
+using System.IO;
+
 
 namespace Mvc.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: HomeController
         public IActionResult Index()
         {
+            // ViewBag och ViewData för vanliga meddelanden
+            ViewBag.Greeting = "Välkommen till vår Pizzeria!";
+            ViewData["OpeningHours"] = "Vi har öppet alla dagar 11:00 - 23:00";
+
             return View();
         }
 
@@ -23,21 +28,22 @@ namespace Mvc.Controllers
         [Route("/omoss")]
         public IActionResult About()
         {
-            var model = new ContactFormModel();  // Skapa en instans av modellen
-    return View(model);  // Skicka modellen till vyn
+            // Hämta sparad data från session om den finns
+            var model = new ContactFormModel(); // Tom modell om inget finns i session
+            return View(model); 
         }
 
-[HttpPost]
-[Route("/omoss")]
-public IActionResult About(ContactFormModel model)
+        // Metod för att skicka till JSON
+        [HttpPost]
+[Route("/omoss/skicka")]
+public IActionResult SendToJson(ContactFormModel model)
 {
     if (ModelState.IsValid)
     {
-        // Filens sökväg
+        // Läs existerande data från JSON-fil
         string filePath = "contactMessages.json";
-
-        // Läs in befintliga meddelanden
         List<ContactFormModel> messages = new();
+
         if (System.IO.File.Exists(filePath))
         {
             string existingJson = System.IO.File.ReadAllText(filePath);
@@ -55,13 +61,12 @@ public IActionResult About(ContactFormModel model)
         System.IO.File.WriteAllText(filePath, updatedJson);
 
         // Visa bekräftelsemeddelande
-        ViewData["Message"] = "Ditt meddelande har sparats!";
-        return View(new ContactFormModel());  // Återställ formuläret
+        ViewData["Message"] = "Ditt meddelande har skickats och sparats!";
+        return View("About", model); // Om det var lyckat, återgå till About
     }
-
-    return View(model);
-}
-
-
-    }
-}
+    else
+    {
+        // Om modellen inte är giltig, visa felmeddelanden
+        ViewData["Message"] = "Vänligen fyll i alla obligatoriska fält!";
+        return View("About", model); // Visa samma vy med felmeddelanden
+    }}}}

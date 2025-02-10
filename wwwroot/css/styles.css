@@ -210,3 +210,26 @@ footer #adress {
 }
 
 /*# sourceMappingURL=styles.css.map */
+
+/* Gör valideringsmeddelandena röda */
+input, textarea {
+  border: 1px solid #ccc;
+}
+
+input:invalid, textarea:invalid {
+  border: 1px solid red;
+}
+
+/* Stil för valideringsmeddelandena (röd text) */
+span.field-validation-error {
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Stil för valideringssummering */
+ul.validation-summary-errors {
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+}

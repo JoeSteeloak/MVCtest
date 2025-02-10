@@ -2,7 +2,7 @@ const url = "https://pizzaapi-kzs1.onrender.com/booking" //URL till mitt API
 const bookingFormEl = document.getElementById('bookingForm');
 
 /* funktion för att läsa in datan i formuläret */
-const bookBtnEl = document.getElementById("bookBtn");
+/* const bookBtnEl = document.getElementById("bookBtn");
 bookBtnEl.addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -12,7 +12,7 @@ bookBtnEl.addEventListener('click', (e) => {
     let date = document.getElementById("booking-date").value;
 
     createBooking(name, phonenumber, numberOfGuests, date);
-});
+}); */
 
 /* Funktion för att lägga till bokningar i databasen */
 async function createBooking(name, phonenumber, numberOfGuests, date) {

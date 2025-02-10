@@ -1,12 +1,12 @@
 /* Hämta ner menyn */
-window.onload = init;
+/* window.onload = init;
 async function init() {
     const url = "https://pizzaapi-kzs1.onrender.com/menu";
 
     const response = await fetch(url + "/getmenu");
     const data = await response.json();
     displayMenu(data);
-};
+}; */
 
 /* //skriv ut menyn
 function displayMenu(data) {
